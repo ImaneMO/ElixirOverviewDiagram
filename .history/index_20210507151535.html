@@ -924,6 +924,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
       elixir_modal_container.classList.add('show');
     });
     close_elixir.addEventListener('click', () => {
+      platforms_modal_container.classList.remove('show');
       elixir_modal_container.classList.remove('show');
     });
 
@@ -932,7 +933,6 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     });
     close.addEventListener('click', () => {
       platforms_modal_container.classList.remove('show');
-      elixir_modal_container.classList.remove('show');
     }); 
 
     openc.addEventListener('click', () => {
