@@ -172,7 +172,6 @@
     animation-duration: 0.25s;
     border-left: 8px solid #FA9B53;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    cursor: pointer;
   }
 
   @media (min-width: 992px) {
@@ -228,18 +227,17 @@
   pointer-events: none;
   position: absolute;
 }
-/*.tooltip:after {
+.tooltip:after {
   border-right: 6px solid transparent;
   border-bottom: 6px solid white; 
   border-left: 6px solid transparent;
   content: '';
   height: 0;
-  /*arrow position
+  /*arrow position*/
     top: 40px;
     left: 40px;
   width: 0;
-}*/
-
+}
 .tooltip:before {
   background: white;
   border-radius: 2px;
@@ -276,8 +274,8 @@
 <body>
 <div class="box-container">
   <div class="row"></div>
-  <div class="container item-a tooltip expand" id="elixir" data-title="ELIXIR Nodes">
-    <button id="open"> Platforms </button>
+  <div class="container item-a" id="elixir">
+    <button class="tooltip expand" id="open" data-title="ELIXIR has five operational platforms."> Platforms </button>
     <button id="openc"> Communities </button>
     <button id="opent"> Coordinator groups </button>
   </div>
@@ -303,15 +301,14 @@
       
       <br/>
       <br/>
-      <h1> ELIXIR Nodes </h1>
-      <p>
-        An ELIXIR Node is a collection of research institutes within a member country. ELIXIR Nodes run the resources and services that are part of ELIXIR.
-
-Each Node has a lead institute that oversees the work of that Node. For example, ELIXIR Norway's lead institute is the University of Bergen. The other institutes in the Node are the University of Oslo, the University of Tromsø, the Norwegian University of Science and Technology, and the Norwegian University of Life Sciences.
+      <h1> ELIXIR / Nodes </h1>
+      <p>ELIXIR's activities are divided into five areas called <strong><a href="https://elixir-europe.org/platforms">'Platforms'</a></strong>. These are Data, Tools, Compute, Interoperability, and Training. The Platforms are managed by Platform leaders and the work is carried out by groups within the Platforms.
       </p>
-
-      <h3>List of Nodes</h3>
-      
+      <button id="data">Data</button>
+      <button id="interop">Interoperability</button>
+      <button id="tools">Tools</button>
+      <button id="training">Training</button>
+      <button id="compute">Compute</button>
     </div>
   </div>
 
@@ -918,14 +915,13 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     const mm = document.getElementById('mm');
 
     const elixir = document.getElementById('elixir');
-    const close_elixir = document.getElementById('close_elixir');
+    const close_elixir = document.getElementById('close-elixir');
 
     elixir.addEventListener('click', () => {
       elixir_modal_container.classList.add('show');
     });
     close_elixir.addEventListener('click', () => {
       elixir_modal_container.classList.remove('show');
-      platforms_modal_container.classList.remove('show');
     });
 
     open.addEventListener('click', () => {

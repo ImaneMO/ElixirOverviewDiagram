@@ -60,10 +60,6 @@
     background-color: #7E556B;
   }
 
-  .button-str {
-    background-color: #FC4C4E;
-  }
-
   .modal-container {
     background-color: rgba(0, 0, 0, 0);
     position: fixed;
@@ -104,12 +100,6 @@
     text-align: left;
   }
 
-  .link:hover {
-    cursor: pointer;
-    color: #FA9B53;
-    font-style: italic;
-  }
-
   .modal p {
     opacity: 0.7;
     font-size: 14px;
@@ -133,6 +123,10 @@
     top: 0
   }
 
+  .breadcrumb {
+    float: right
+  }
+
   a {
     cursor: pointer;
     color: #70344D;
@@ -140,7 +134,7 @@
 
   .container {
     text-align: center;
-    margin: 50px;
+    margin: 100px;
     max-width: 50%;
     height: 40%;
     background-color: #50889F;
@@ -160,19 +154,8 @@
     max-width: 100%
   }
 
-  div.item-a {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  }
-
-  div.item-a:hover {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    animation-name: example;
-    animation-duration: 0.25s;
-    border-left: 8px solid #FA9B53;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    cursor: pointer;
+  .item-a {
+    grid-area: header;
   }
 
   @media (min-width: 992px) {
@@ -228,18 +211,17 @@
   pointer-events: none;
   position: absolute;
 }
-/*.tooltip:after {
+.tooltip:after {
   border-right: 6px solid transparent;
   border-bottom: 6px solid white; 
   border-left: 6px solid transparent;
   content: '';
   height: 0;
-  /*arrow position
+  /*arrow position*/
     top: 40px;
     left: 40px;
   width: 0;
-}*/
-
+}
 .tooltip:before {
   background: white;
   border-radius: 2px;
@@ -276,8 +258,8 @@
 <body>
 <div class="box-container">
   <div class="row"></div>
-  <div class="container item-a tooltip expand" id="elixir" data-title="ELIXIR Nodes">
-    <button id="open"> Platforms </button>
+  <div class="container item-a">
+    <button class="tooltip expand" id="open" data-title="ELIXIR has five operational platforms."> Platforms </button>
     <button id="openc"> Communities </button>
     <button id="opent"> Coordinator groups </button>
   </div>
@@ -288,33 +270,10 @@
   <div class="container item-c">
     <button class="button-mauve" id="open-fg"> Focus Groups </button>
   </div>
-  <div class="container item-d">
-    <button class="button-str" id="open-reg"> Registries </button>
-    <button class="button-str" id="open-pr"> EC Projects </button>
-    <button class="button-str" id="open-svc"> Services </button>
+  <div class="item-c">
+    <button> Regi </button>
   </div>
 </div>
-
-  <!-- Elixir modal -->
-
-  <div class="modal-container" id="elixir_modal_container">
-    <div class="modal">
-      <button class="close-button topright" id="close_elixir">&laquo; Go back to Overview</button>
-      
-      <br/>
-      <br/>
-      <h1> ELIXIR Nodes </h1>
-      <p>
-        An ELIXIR Node is a collection of research institutes within a member country. ELIXIR Nodes run the resources and services that are part of ELIXIR.
-
-Each Node has a lead institute that oversees the work of that Node. For example, ELIXIR Norway's lead institute is the University of Bergen. The other institutes in the Node are the University of Oslo, the University of Tromsø, the Norwegian University of Science and Technology, and the Norwegian University of Life Sciences.
-      </p>
-
-      <h3>List of Nodes</h3>
-      
-    </div>
-  </div>
-
 
   <!-- Platforms modal -->
 
@@ -505,38 +464,38 @@ Each Node has a lead institute that oversees the work of that Node. For example,
       <div class="comm-container">
         <div class="row">
           <div class="col">
-            <img alt="3D-BioInfo Community icon" class="column left" src="https://elixir-europe.org/sites/default/files/images/3dbioinfo-icon.svg" />
-            <h4 class="column right link" id="3db">3D-BioInfo</h4>
+            <a href="https://elixir-europe.org/communities/3d-bioinfo"><img alt="3D-BioInfo Community icon" class="column left" src="https://elixir-europe.org/sites/default/files/images/3dbioinfo-icon.svg" /></a>
+            <h4 class="column right"><a href="https://elixir-europe.org/communities/3d-bioinfo">3D-BioInfo</a></h4>
           </div>
           <div class="col">
             <img class="column left" alt="Galaxy icon" src="https://elixir-europe.org/sites/default/files/images/galaxy-icon2.svg" />
-            <h4 class="column right link" id="galaxy">Galaxy</h4>
+            <h4 class="column right">Galaxy</h4>
           </div>
           <div class="col">
             <img alt="Marine Metagenomics icon" class="column left" src="https://elixir-europe.org/sites/default/files/images/marine-metagenomics-icon.svg" />
-            <h4 class="column right link" id="mm">Marine Metagenomics</h4>
+            <h4 class="column right">Marine Metagenomics</h4>
           </div>
           <div class="col">
             <img alt="Proteomics icon" class="column left" src="https://elixir-europe.org/sites/default/files/images/proteomics-icon.svg" />
-            <h4 class="column right link" id="prot">Proteomics</h4>
+            <h4 class="column right">Proteomics</h4>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <img alt="IDP icon" class="column left" src="https://elixir-europe.org/sites/default/files/images/idp-icon.svg" />
-            <h4 class="column right link" id="idp">Intrinsically Disordered Proteins</h4>
+            <h4 class="column right">Intrinsically Disordered Proteins</h4>
           </div>
           <div class="col">
             <img class="column left" alt="Metabolomics icon" src="https://elixir-europe.org/sites/default/files/images/metabolomics-icon.svg" />
-            <h4 class="column right link" id="metab">Metabolomics</h4>
+            <h4 class="column right">Metabolomics</h4>
           </div>
           <div class="col">
             <img class="column left" alt="Microbial Biotechnology icon" src="https://elixir-europe.org/sites/default/files/images/microbial-biotech-icon.svg" />
-            <h4 class="column right link" id="mb">Microbial Biotechnology</h4>
+            <h4 class="column right">Microbial Biotechnology</h4>
           </div>
           <div class="col">
             <img alt="Plant Sciences icon" class="column left" src="https://elixir-europe.org/sites/default/files/images/plant-sciences-icon.svg" />
-            <h4 class="column right link" id="ps">Plant Sciences</h4>
+            <h4 class="column right">Plant Sciences</h4>
           </div>
         </div>
         
@@ -545,194 +504,21 @@ Each Node has a lead institute that oversees the work of that Node. For example,
         <div class="row">
           <div class="col">
             <img alt="Human Data icon" class="column left" src="https://elixir-europe.org/sites/default/files/images/human-data-icon3.svg" />
-            <h4 class="column right link" id="fhd">Federated Human Data</h4>
+            <h4 class="column right">Federated Human Data</h4>
           </div>
           <div class="col">
             <img alt="Human Copy Number Variation icon" class="column left" src="https://elixir-europe.org/sites/default/files/images/hcnv-icon.svg" />
-            <h4 class="column right link" id="hcnv">Human Copy Number Variation</h4>
+            <h4 class="column right">Human Copy Number Variation</h4>
           </div>
           <div class="col">
             <img alt="Rare Diseases icon" class="column left" src="https://elixir-europe.org/sites/default/files/images/rare-disease-icon.svg" />
-            <h4 class="column right link" id="rd">Rare Diseases</h4>
+            <h4 class="column right">Rare Diseases</h4>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-    <!-- 3D-BioInfo modal -->
-
-    <div class="modal-container" id="db_modal_container">
-      <div class="modal">
-        <button class="close-button topright" id="prev-db">&laquo; Go back to Communities</button>
-  
-        <br/>
-        <h1> 3D-BioInfo Community </h1>
-        <p>
-          Structural bioinformatics provides methods and tools to analyse, predict, archive and validate the three-dimensional (3D) structure data of biomacromolecules such as proteins, RNA or DNA.
-        </p>
-  
-        <h3>Goals</h3>
-        <ul>
-          <h5><a href="/">1. To develop the infrastructure for FAIR structural and functional annotations</a></h5>
-          <h5><a href="/">2. To create open resources for sharing, integrating and benchmarking software tools for modelling the proteome in 3D</a></h5>
-          <h5><a href="*">3. To develop tools to Describe, Analyse, Annotate, and Predict Nucleic Acid Structures</a></h5>
-          <h5><a href="/">4. To help develop models for protein-ligand interactions</a></h5>
-        </ul>
-  
-        <h3>More</h3>
-        <h5><a href="https://drive.google.com/drive/folders/1WZctj8v86-v7Ir9KErEEO0p-zcWtmSrx">Documents from the 2020 3D-BioInfo Community AGM</a></h5>
-        <h5><a href="https://f1000research.com/slides/8-1059">Slides about the 3DBioInfo ELIXIR Implementation Study</a></h5>
-        <h5><a href="https://www.elixir-europe.org/about-us/commissioned-services?combine=&field_categories_tid=All&field_elixir_node_target_id=All&status=All">Commissioned services</a></h5>
-        
-      </div>
-    </div>
-  
-    <!-- Galaxy modal -->
-
-    <div class="modal-container" id="galaxy_modal_container">
-      <div class="modal">
-        <button class="close-button topright" id="prev-galaxy">&laquo; Go back to Communities</button>
-        <br/>
-        <h1> Galaxy Community </h1>
-        <p>
-          Galaxy is an open, web-based platform for computational biomedical research. It allows researchers without programming experience to run data analysis workflows on their data, share their analyses with others, and enable others to repeat the same analysis. This makes science reproducible, it facilitates sharing of data and results, and removes the need for users to compile and install software tools.
-        </p>
-        <h3>Goals</h3>
-        <ul>
-          <h5><a href="/">1. To build a European network of Galaxy communities</a></h5>
-          <h5><a href="/">2. To extend Galaxy training provision</a></h5>
-          <h5><a href="*">3. To create a Galaxy cloud infrastructure across Europe</a></h5>
-          <h5><a href="/">4. To make it easier to access and transfer data</a></h5>
-          <h5><a href="/">5. To improve tools and data integration</a></h5>
-          <h5><a href="/">6. To promote FAIR principles in Galaxy</a></h5>
-        </ul>
-        <h3>More</h3>
-        <h5>For Galaxy activities from 2015-18 see the <a href="https://www.elixir-europe.org/about/groups/galaxy-wg">Galaxy Working Group page</a>.</h5>
-        <h5><a href="https://elixir-europe.org/about-us/commissioned-services?combine=&field_categories_tid=1221&field_elixir_node_target_id=All&status=finished">Commissioned Services</a></h5>
-        
-      </div>
-    </div>
-
-        <!-- FHD modal -->
-
-        <div class="modal-container" id="fhd_modal_container">
-          <div class="modal">
-            <button class="close-button topright" id="prev-fhd">&laquo; Go back to Communities</button>
-      
-            <br/>
-            <br/>
-            <h1> Federated Human Data Community </h1>
-            <p>
-              DNA and RNA sequencing have become increasingly important in medical and translational research. The data generated from these techniques has led to a huge demand for secure means to store, transfer and analyse the human biomedical data that has been consented for research.            
-            </p>
-      
-            <h3>Goals</h3>
-            <ul>
-              <h5><a href="/">1. To provide a sustainable infrastructure for storing, coordinating and distributing human data</a></h5>
-              <h5><a href="/">2. To provide standardised tools to discover and access human data</a></h5>
-              <h5><a href="*">3. To develop long-term management policies for human data</a></h5>
-              <h5><a href="/">4. To ensure that human data in ELIXIR services is handled in accordance with the appropriate legal framework</a></h5>
-            </ul>
-      
-            <h3>More</h3>
-            <h5><a href="https://elixir-europe.org/about-us/implementation-studies/beacon-2019-21">ELIXIR Beacons</a></h5>
-            <h5><a href="https://elixir-europe.org/about-us/implementation-studies/federated-human-data">ELIXIR Federated Human Data (2019-21)</a></h5>
-            <h5><a href="https://elixir-europe.org/about-us/commissioned-services?combine=&field_categories_tid=911&field_elixir_node_target_id=All&status=finished">Commissioned Services</a></h5>
-          </div>
-        </div>
-
-    <!-- HCNV modal -->
-
-    <div class="modal-container" id="hcnv_modal_container">
-      <div class="modal">
-        <button class="close-button topright" id="prev-hcnv">&laquo; Go back to Communities</button>
-  
-        <br/>
-        <br/>
-        <h1> Human Copy Number Variation Community </h1>
-        <p>
-          It is thought that these Copy Number Variations are vital for evolution, but they also play important roles in disease. Despite the fact that Copy Number Variations are the most prevalent genetic mutation type, identifying and interpreting them is still a major challenge. The ELIXIR human Copy Number Variation (hCNV) Community aim to implement processes to make the detection, annotation and interpretation of these variations easier.
-        </p>
-  
-        <h3>Goals</h3>
-        <ul>
-          <h5><a href="/">1. To define optimal CNV detection pipelines</a></h5>
-          <h5><a href="/">2. To identify reference datasets for hCNV</a></h5>
-          <h5><a href="*">3. To establish and define data exchange formats</a></h5>
-          <h5><a href="/">4. To create a process to facilitate the identification of patients with similar genotypes and phenotypes</a></h5>
-          <h5><a href="/">5. To develop innovative tools to detect, annotate and interpret CNV</a></h5>
-          <h5><a href="/">6. To help make hCNV services and datasets FAIR (Findable, Accessible, Interoperable, Reusable)</a></h5>
-          <h5><a href="/">7. To disseminate knowledge and train researchers</a></h5>
-        </ul>
-  
-        <h3>More</h3>
-        <h5><a href="https://www.elixir-europe.org/about-us/commissioned-services?combine=&field_categories_tid=All&field_elixir_node_target_id=All&status=All">Commissioned Services</a></h5>        
-      </div>
-    </div>
-
-    <!-- IDP modal -->
-
-    <div class="modal-container" id="idp_modal_container">
-      <div class="modal">
-        <button class="close-button topright" id="prev-idp">&laquo; Go back to Communities</button>
-  
-        <br/>
-        <br/>
-        <h1> Intrinsically Disordered Proteins Community </h1>
-        <p>
-          The major goal of the IDP Community is to support the development of standards, tools and resources to accelerate the identification, analysis and functional characterisation of IDPs. Given their therapeutic relevance, IDR-mediated interactions are now seen as potential drug targets. A better understanding of their structure and function will help in developing new strategies to treat human diseases.
-        </p>
-  
-        <h3>Goals</h3>
-        <ul>
-          <h5><a href="/">1. To simplify IDP data access and dissemination</a></h5>
-          <h5><a href="/">2. To drive the curation of IDP literature</a></h5>
-          <h5><a href="*">3. To develop a centralised knowledgebase for IDP data</a></h5>
-          <h5><a href="/">4. To integrate IDP data into ELIXIR Core Data Resources</a></h5>
-          <h5><a href="/">5. To improve tools for IDP analysis</a></h5>
-        </ul>
-  
-        <h3>More</h3>
-        <h5><a href="https://elixir-europe.org/about-us/commissioned-services/integration-protein-data">Integration and standardization of intrinsically disordered protein data</a></h5>
-        <h5><a href="https://elixir-europe.org/about-us/commissioned-services">Commissioned Services</a></h5>
-        
-      </div>
-    </div>
-
-    <!-- MM modal -->
-
-    <div class="modal-container" id="mm_modal_container">
-      <div class="modal">
-        <button class="close-button topright" id="prev-mm">&laquo; Go back to Communities</button>
-  
-        <br/>
-        <h1> Marine Metagenomics Community </h1>
-        <p>
-          Marine metagenomics is the study of the genomes of these micro-organisms, as sampled directly from the ocean environment. It is a new and rapidly expanding area of research, and there is a danger that data is produced faster than users are able to analyse, interpret and share it. There is an urgent need to create a data management infrastructure dedicated to marine metagenomics research.
-
-This Community aims to develop a sustainable metagenomics infrastructure to enhance research and industrial innovation within the marine domain.
-        </p>
-  
-        <h3>Goals</h3>
-        <ul>
-          <h5><a href="/">1. To develops standards and best practices for the marine domain</a></h5>
-          <h5><a href="/">2. To provide databases specific to marine metagenomics</a></h5>
-          <h5><a href="*">3. To develop tools and pipelines to enhance metagenomics analyses</a></h5>
-          <h5><a href="/">4. To organise training workshops</a></h5>
-          <h5><a href="/">5. To improve tools for IDP analysis</a></h5>
-        </ul>
-  
-        <h3>Services</h3>
-        <h5><a href="https://mmp.sfb.uit.no/">Marine Metagenomics Portal (MMP)</a></h5>
-        <h5><a href="https://www.ebi.ac.uk/metagenomics/">MGnify</a></h5>
-        <h5><a href="http://itsonedb.cloud.ba.infn.it/">ITSoneDB</a></h5>
-        <h5><a href="https://www.elixir-europe.org/about-us/commissioned-services">Commissioned Services</a></h5>
-        
-      </div>
-    </div>
-
-    
     <!-- Coords Groups modal -->
 
     <div class="modal-container" id="coords_modal_container">
@@ -820,52 +606,6 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
         </div>
       </div>
 
-      <!-- Services modal -->
-
-      <div class="modal-container" id="svc_modal_container">
-        <div class="modal">
-          <button class="close-button topright" id="prev-svc">&laquo; Go back to Overview</button>
-          
-          <br/>
-          <br/>
-          <h1> Services </h1>
-          <p>
-          </p>
-          
-        </div>
-      </div>
-
-      <!-- Registries modal -->
-
-      <div class="modal-container" id="reg_modal_container">
-        <div class="modal">
-          <button class="close-button topright" id="prev-reg">&laquo; Go back to Overview</button>
-          
-          <br/>
-          <br/>
-          <h1> Registries </h1>
-          <p>
-            ELIXIR are currently listing more than 300 services and resources, some of which are listings of other services, resources, digital objects - loosely termed as ‘registries’. It is crucial that querying of these listings is done in the most effective way and is fit-for-purpose for down-stream processing. 
-          </p>
-          
-        </div>
-      </div>
-
-<!-- EC Projects modal -->
-
-<div class="modal-container" id="pr_modal_container">
-  <div class="modal">
-    <button class="close-button topright" id="prev-pr">&laquo; Go back to Overview</button>
-    
-    <br/>
-    <br/>
-    <h1> EC Projects </h1>
-    <p>
-      ELIXIR participates in several EU-funded projects to drive the delivery of various bioinformatics services to the scientific community. The EU projects enable ELIXIR to collaborate with other key European and global initiatives and ESFRI Research Infrastructures and e-Infrastructures.
-    </p>
-    
-  </div>
-</div>      
 
 
   <script type="text/javascript">
@@ -876,9 +616,6 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     const open_ii = document.getElementById('open-ii');
     const open_collabs = document.getElementById('open-collabs');
     const open_fg = document.getElementById('open-fg');
-    const open_svc = document.getElementById('open-svc');
-    const open_reg =  document.getElementById('open-reg');
-    const open_pr =  document.getElementById('open-pr');
 
     const platforms_modal_container = document.getElementById('platforms_modal_container');
     const cooms_modal_container = document.getElementById('comms_modal_container');
@@ -893,16 +630,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     const prev_coords = document.getElementById('prev-coords');
     const prev_ii = document.getElementById('prev-ii');
     const prev_collabs = document.getElementById('prev-collabs');
-    const prev_svc = document.getElementById('prev-svc');
     const prev_fg = document.getElementById('prev-fg');
-    const prev_db = document.getElementById('prev-db');
-    const prev_fhd = document.getElementById('prev-fhd');
-    const prev_galaxy = document.getElementById('prev-galaxy');
-    const prev_hcnv = document.getElementById('prev-hcnv');
-    const prev_idp = document.getElementById('prev-idp');
-    const prev_mm = document.getElementById('prev-mm');
-    const prev_reg = document.getElementById('prev-reg');
-    const prev_pr = document.getElementById('prev-pr');
 
     const tools = document.getElementById('tools'); 
     const data = document.getElementById('data'); 
@@ -910,27 +638,10 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     const training = document.getElementById('training'); 
     const compute = document.getElementById('compute');
 
-    const db = document.getElementById('3db');
-    const fhd = document.getElementById('fhd');
-    const galaxy = document.getElementById('galaxy');
-    const hcnv = document.getElementById('hcnv');
-    const idp = document.getElementById('idp');
-    const mm = document.getElementById('mm');
-
-    const elixir = document.getElementById('elixir');
-    const close_elixir = document.getElementById('close_elixir');
-
-    elixir.addEventListener('click', () => {
-      elixir_modal_container.classList.add('show');
-    });
-    close_elixir.addEventListener('click', () => {
-      elixir_modal_container.classList.remove('show');
-      platforms_modal_container.classList.remove('show');
-    });
-
     open.addEventListener('click', () => {
       platforms_modal_container.classList.add('show');
     });
+
     close.addEventListener('click', () => {
       platforms_modal_container.classList.remove('show');
     }); 
@@ -938,6 +649,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     openc.addEventListener('click', () => {
       comms_modal_container.classList.add('show');
     });
+
     closec.addEventListener('click', () => {
       comms_modal_container.classList.remove('show');
     }); 
@@ -945,6 +657,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     opent.addEventListener('click', () => {
       coords_modal_container.classList.add('show');
     });
+
     prev_coords.addEventListener('click', () => {
       coords_modal_container.classList.remove('show');
     });
@@ -952,6 +665,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     tools.addEventListener('click', () => {
       tools_modal_container.classList.add('show');
     });
+
     previous.addEventListener('click', () => {
       tools_modal_container.classList.remove('show');
     });
@@ -959,6 +673,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     data.addEventListener('click', () => {
       data_modal_container.classList.add('show');
     });
+
     prev_data.addEventListener('click', () => {
       data_modal_container.classList.remove('show');
     });
@@ -966,6 +681,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     interop.addEventListener('click', () => {
       interop_modal_container.classList.add('show');
     });
+
     prev_interop.addEventListener('click', () => {
       interop_modal_container.classList.remove('show');
     });
@@ -973,6 +689,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     training.addEventListener('click', () => {
       tr_modal_container.classList.add('show');
     });
+
     prev_tr.addEventListener('click', () => {
       tr_modal_container.classList.remove('show');
     });
@@ -980,6 +697,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     compute.addEventListener('click', () => {
       comp_modal_container.classList.add('show');
     });
+
     prev_comp.addEventListener('click', () => {
       comp_modal_container.classList.remove('show');
     });
@@ -987,6 +705,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     open_ii.addEventListener('click', () => {
       ii_modal_container.classList.add('show');
     });
+
     prev_ii.addEventListener('click', () => {
       ii_modal_container.classList.remove('show');
     });
@@ -994,6 +713,7 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     open_collabs.addEventListener('click', () => {
       collabs_modal_container.classList.add('show');
     });
+
     prev_collabs.addEventListener('click', () => {
       collabs_modal_container.classList.remove('show');
     });
@@ -1001,71 +721,9 @@ Focus Groups are open to any member of ELIXIR plus, where useful, external parti
     open_fg.addEventListener('click', () => {
       fg_modal_container.classList.add('show');
     });
+
     prev_fg.addEventListener('click', () => {
       fg_modal_container.classList.remove('show');
-    });
-
-    db.addEventListener('click', () => {
-      db_modal_container.classList.add('show');
-    });
-    prev_db.addEventListener('click', () => {
-      db_modal_container.classList.remove('show');
-    });
-
-    fhd.addEventListener('click', () => {
-      fhd_modal_container.classList.add('show');
-    });
-    prev_fhd.addEventListener('click', () => {
-      fhd_modal_container.classList.remove('show');
-    });
-
-    galaxy.addEventListener('click', () => {
-      galaxy_modal_container.classList.add('show');
-    });
-    prev_galaxy.addEventListener('click', () => {
-      galaxy_modal_container.classList.remove('show');
-    });
-
-    hcnv.addEventListener('click', () => {
-      hcnv_modal_container.classList.add('show');
-    });
-    prev_hcnv.addEventListener('click', () => {
-      hcnv_modal_container.classList.remove('show');
-    });
-
-    idp.addEventListener('click', () => {
-      idp_modal_container.classList.add('show');
-    });
-    prev_idp.addEventListener('click', () => {
-      idp_modal_container.classList.remove('show');
-    });
-
-    mm.addEventListener('click', () => {
-      mm_modal_container.classList.add('show');
-    });
-    prev_mm.addEventListener('click', () => {
-      mm_modal_container.classList.remove('show');
-    });
-
-    open_svc.addEventListener('click', () => {
-      svc_modal_container.classList.add('show');
-    });
-    prev_svc.addEventListener('click', () => {
-      svc_modal_container.classList.remove('show');
-    });
-
-    open_reg.addEventListener('click', () => {
-      reg_modal_container.classList.add('show');
-    });
-    prev_reg.addEventListener('click', () => {
-      reg_modal_container.classList.remove('show');
-    });
-
-    open_pr.addEventListener('click', () => {
-      pr_modal_container.classList.add('show');
-    });
-    prev_pr.addEventListener('click', () => {
-      pr_modal_container.classList.remove('show');
     });
   </script>
 </body>
