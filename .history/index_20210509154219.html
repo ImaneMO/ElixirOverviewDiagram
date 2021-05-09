@@ -249,7 +249,7 @@
   display: block;
   opacity: 0;
   pointer-events: none;
-  position: sticky;
+  position: absolute;
 }
 /*.tooltip:after {
   border-right: 6px solid transparent;
@@ -303,11 +303,11 @@
       border-top: 50px solid #B7C8D7;
 }
 
-.container-dart #triangle-down:hover {
+#triangle-down:hover .container-dart {
   color: #f2f2f2;
-  cursor: cursor;
   box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
   animation-duration: 0.25s;
+  cursor: pointer;
 }
 
 .item-d {

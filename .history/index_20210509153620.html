@@ -249,7 +249,7 @@
   display: block;
   opacity: 0;
   pointer-events: none;
-  position: sticky;
+  position: absolute;
 }
 /*.tooltip:after {
   border-right: 6px solid transparent;
@@ -303,15 +303,17 @@
       border-top: 50px solid #B7C8D7;
 }
 
-.container-dart #triangle-down:hover {
-  color: #f2f2f2;
-  cursor: cursor;
-  box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
+#triangle-down:hover {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  animation-name: example;
   animation-duration: 0.25s;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  cursor: pointer;
 }
 
 .item-d {
-  margin: 50px;
+  
 }
   
 </style>

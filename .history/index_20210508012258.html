@@ -58,7 +58,6 @@
 
   .button-mauve {
     background-color: #7E556B;
-    float: right;
   }
 
   .button-str {
@@ -141,11 +140,12 @@
 
   .container-dart {
     text-align: center;
+    margin: 70px;
     max-width: 70%;
     height: 70%;
-    background-color: #B7C8D7;
+    background-color: #71707D;
+    padding: 100px;
     display: inline-block;
-    margin-top: 30px;
   }
 
   .container {
@@ -194,8 +194,7 @@
 
   .item-b {
     text-align: center;
-    max-width: 50%;
-    margin: 0 22%;
+    position: ;
   }
 
   @media (min-width: 992px) {
@@ -249,7 +248,7 @@
   display: block;
   opacity: 0;
   pointer-events: none;
-  position: sticky;
+  position: absolute;
 }
 /*.tooltip:after {
   border-right: 6px solid transparent;
@@ -269,10 +268,10 @@
   color: #50889F;
   content: attr(data-title);
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 12px;
   padding: 6px 10px;
   /*bubble height*/
-    top: 6px;
+    top: 46px;
   white-space: nowrap;
 }
 
@@ -294,45 +293,26 @@
   transition: all .2s .1s ease-in-out;
 }
 
-
-#triangle-down {
-      width: 0;
-      height: 0;
-      border-left: 472px solid transparent;
-      border-right: 472px solid transparent;
-      border-top: 50px solid #B7C8D7;
-}
-
-.container-dart #triangle-down:hover {
-  color: #f2f2f2;
-  cursor: cursor;
-  box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
-  animation-duration: 0.25s;
-}
-
-.item-d {
-  margin: 50px;
-}
-  
 </style>
 </head>
 <body>
 <div class="box-container">
   <div class="row"></div>
   <div class="container-dart">
-    <div class="container item-a tooltip expand" id="elixir" data-title="ELIXIR">
-      <button id="open"> Platforms </button>
-      <button id="openc"> Communities </button>
-      <button id="opent"> Coordinator groups </button>
-    </div>
-    <button class="button-mauve" id="open-fg"> Focus Groups </button>
-    <div class="item-b">
-      <button class="button-aqua" id="open-ii"> Innovation & Industry </button>
-      <button class="button-aqua" id="open-collabs"> Collaborations </button>
-    </div>
+  <div class="container item-a tooltip expand" id="elixir" data-title="ELIXIR">
+    <button id="open"> Platforms </button>
+    <button id="openc"> Communities </button>
+    <button id="opent"> Coordinator groups </button>
   </div>
-  <div id="triangle-down" class="tooltip expand" data-title="WHAT WE OFFER"></div>
-  <div class="item-d">
+  <div class="item-c">
+    <button class="button-mauve" id="open-fg"> Focus Groups </button>
+  </div>
+  <div class="item-b">
+    <button class="button-aqua" id="open-ii"> Innovation & Industry </button>
+    <button class="button-aqua" id="open-collabs"> Collaborations </button>
+  </div>
+</div>
+  <div class="container item-d">
     <button class="button-str" id="open-reg"> Registries </button>
     <button class="button-str" id="open-pr"> EC Projects </button>
     <button class="button-str" id="open-svc"> Services </button>

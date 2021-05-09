@@ -249,7 +249,7 @@
   display: block;
   opacity: 0;
   pointer-events: none;
-  position: sticky;
+  position: absolute;
 }
 /*.tooltip:after {
   border-right: 6px solid transparent;
@@ -269,10 +269,10 @@
   color: #50889F;
   content: attr(data-title);
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 12px;
   padding: 6px 10px;
   /*bubble height*/
-    top: 6px;
+    top: 46px;
   white-space: nowrap;
 }
 
@@ -298,21 +298,10 @@
 #triangle-down {
       width: 0;
       height: 0;
-      border-left: 472px solid transparent;
-      border-right: 472px solid transparent;
-      border-top: 50px solid #B7C8D7;
-}
-
-.container-dart #triangle-down:hover {
-  color: #f2f2f2;
-  cursor: cursor;
-  box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
-  animation-duration: 0.25s;
-}
-
-.item-d {
-  margin: 50px;
-}
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-top: 50px solid red;
+    }
   
 </style>
 </head>
@@ -331,8 +320,8 @@
       <button class="button-aqua" id="open-collabs"> Collaborations </button>
     </div>
   </div>
-  <div id="triangle-down" class="tooltip expand" data-title="WHAT WE OFFER"></div>
-  <div class="item-d">
+  <div id="triangle-down"></div>
+  <div class="container item-d">
     <button class="button-str" id="open-reg"> Registries </button>
     <button class="button-str" id="open-pr"> EC Projects </button>
     <button class="button-str" id="open-svc"> Services </button>
